@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Tienda.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="StyleSheet1.css" />
+    <title>PRUEBA TECNICA</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+            background-color: white;
+        }
+        .btnM{
+            color: black;
+            border: 0px;
+            font-family:Calibri;
+            font-weight: normal;
+            font-size: 23px;
+            
+        }
+        .btnM:hover{
+            color: #1960BF;
+        }
+        .t{
+            background-color: #67445C;
+        }
+        footer{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .hc {
+            color: #666666;
+        }
+        .l {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .GridPager a, .GridPager span{
+            display: block;
+            height: 35px;
+            width: 35px;
+            color: #000000;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .GridPager a{
+            background-color: #f5f5f5f5;
+            color: #96969696;
+            border: 1px solid #96969696;
+        }
+        .GridPager span{
+            background-color: #0F3A54;
+            color: #ffffff;
+            border: 1px solid #0F3A54;   
+        }
+    </style>
+</head>
+<body>
+     <div class="modal fade" runat="server" role="dialog" id="orderModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-black l">Message</h5>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body hc l">Datos Guardados Con Exito!</div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function showPopup() {
+            var myModal = new bootstrap.Modal(document.getElementById('orderModal'), { keyboard: false });
+            myModal.show();
+        }
+    </script>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center t py-3"><span class="fs-3" style="color: white;">TIENDA DE ABARROTES</span></div>
+                <div class="mt-3"></div>
+                <div class="col-lg col-12 text-center px-0">
+                    <span><asp:Button ID="product" runat="server" CssClass="btnM bg-transparent" Text="PRODUCTO" OnClick="product_Click"/></span>
+                     <div id="div1" runat="server" class="px-0" style="background-color: #EBEDF0; height: 6px;"></div>
+                </div>
+                <div class="col-lg col-12 text-center px-0">
+                    <span><asp:Button ID="provider" runat="server" CssClass="btnM bg-transparent" Text="PROVEEDOR" OnClick="provider_Click"/></span>
+                    <div id="div2" runat="server" class="px-0" style="background-color: #EBEDF0; height: 6px;"> </div>
+                </div>
+                <div class="col-lg col-12 text-center px-0">
+                    <span><asp:Button ID="record" runat="server" CssClass="btnM bg-transparent" Text="HISTORIAL" OnClick="record_Click"/></span>
+                    <div id="div3" runat="server" class="px-0" style="background-color: #EBEDF0; height: 6px;"> </div>
+                </div>
+                <div class="col-lg col-12 text-center px-0">
+                    <span><asp:Button ID="plus" runat="server" CssClass="btnM bg-transparent" Text="MÁS" OnClick="plus_Click" /></span>
+                    <div id="div4" runat="server" class="px-0" style="background-color: #EBEDF0; height: 6px;"> </div>
+                </div>
+                <div class="col-lg col-12 text-center px-0">
+                    <span><asp:Button ID="exit" runat="server" CssClass="btnM bg-transparent" Text="SALIR" OnClick="exit_Click" /></span>
+                    <div id="div6" runat="server" class="px-0" style="background-color: #EBEDF0; height: 6px;"> </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+<footer class="py-3 bg-light text-black fs-5 text-center">© Copyright 2022 Prueba Técnica</footer>
+</body>
+</html>
